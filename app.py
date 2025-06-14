@@ -87,9 +87,6 @@ def health_check():
 @app.route("/get", methods=["POST"])
 def chat():
     try:
-        if rag_chain is None:
-            initialize_components()
-
         msg = request.form.get("user-input", "")
         if not msg:
             return "Please ask a medical question."
