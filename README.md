@@ -8,7 +8,7 @@ HealthSavvy is an intelligent, conversational AI chatbot designed to help users 
 
 ## 🚀 Live Demo
 
-🌐 [Check it out on Render](https://med-ai-gen-ai.onrender.com)  
+🌐 [Check it out on Render](https://healthsavvy.onrender.com)  
 *(Link will be updated once deployed from your fork)*
 
 ---
