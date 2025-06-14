@@ -106,8 +106,10 @@ def chat():
 def cleanup(response):
     clear_memory()
     return response
-
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 8080))
-    initialize_components()
-    app.run(host="0.0.0.0", port=port)
+    try:
+        initialize_components()
+        app.run(host="0.0.0.0", port=port)
+    except Exception as e:
+        logger.error(f"App failed to start: {str(e)}")
