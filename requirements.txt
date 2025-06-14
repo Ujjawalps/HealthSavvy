@@ -1,0 +1,16 @@
+flask
+langchain-core
+langchain
+langchain-community
+langchain-google-genai
+langchain-pinecone
+langchain-huggingface
+python-dotenv
+sentence-transformers
+pinecone-client
+transformers
+torch
+google-generativeai
+huggingface-hub[hf_xet]
+waitress
+gunicorn
