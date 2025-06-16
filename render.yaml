@@ -1,14 +1,17 @@
+# This file is used to configure the Render service for the HealthSavvy application.
 services:
   - type: web
-    name: Med-AI-Gen-AI
+    name: healthsavvy
     env: python
     plan: starter
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 1 --threads 1 --timeout 300 --max-requests 40 --max-requests-jitter 5 --preload
+    startCommand: gunicorn --workers=1 --threads=4 --timeout=60 --memory-limit=512 app:app
     envVars:
-      - key: PINECONE_API_KEY
-        sync: false
+      - key: PYTHON_VERSION
+        value: 3.9.0
       - key: GOOGLE_API_KEY
         sync: false
-    healthCheckPath: /health
-    runtime: python3
+      - key: PINECONE_API_KEY
+        sync: false
+      - key: PINECONE_ENV
+        sync: false
